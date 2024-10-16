@@ -20,34 +20,57 @@ Lots of interesting info to dig through. Firstly, we see there's three ports ope
 ## 2. What is running on the higher port?
 > ***SSH***
 
-Let's do some enumeration on the target using GoBuster.
+Let's do some enumeration on the target using GoBuster to look for hidden files and URL paths.
 
-We'll need a wordlist and TryHackMe provides several.
+We'll need a wordlist that contains common terms so let's see what TryHackMe provides.
 
-(images/find_wordlists.png)
+![wordlist search](images/find_wordlists.png)
 
-- Checked `robots.txt`, found some details. I think I found a username. Will investigate later.
+![wordlists](images/wordlists1.png)
 
-![Robot.txt](images/robots.jpg)
+Check out the `common.txt` which should suffice for our needs
 
-- Run GoBuster -> `gobuster dir http://<IP> -w /usr/share/wordlists/dirb/common.txt`
+![wordlists](images/wordlists2.png)
 
-![GoBuster](images/gobuster.jpg)
+`gobuster dir -u <IP> -w /root/Desktop/Tools/wordlists/dirb/common.txt`
 
-> There is one directory that catches my eye is `/simple`. So I checked the site `http://<IP>/simple`. Seems like ***CMS Made Simple*** Webpage. At the bottom there is version of it mentioned as well.
+`dir: uses directory/file bruteforcing mode `
 
-![CMS](images/cms.jpg)
+`-u: url`
 
-The `CMS made simple 2.2.8` can be searched on CVE Details website for vulnerability or `searchsploit` database can be used, CMD -> `searchsploit cms made simple 2.2.8`
+`-w: wordlist`
 
-![Searchsploit Result](images/searchexploit.jpg)
-> Looks like we found an **SQL Injection** with this version and the exploit is located in `/usr/share/exploitdb/exploits/php/webapps/46635.py`
+![GoBuster](images/gobuster.png)
 
-Check the file data to get the CVE number.
+We get some `403` forbidden resources, a `200` OK response for `robots.txt`, and a `301` moved permanently `simple` path.
+
+Checking `robots.txt` first tells us a possible username by `mike` and that the CUPS server shouldn't be indexed.
+
+![robots.txt](images/robots_txt.png)
+
+Now checking out the `simple` path
+
+![simple](images/simple.png)
+
+There's an interesting section that mentions logging into the admin panel. Will keep in mind for later.
+
+![admin](images/admin.png)
+
+At the bottom, we see the server is powered by `CMS Made Simple version 2.2.8` so lets plug that into searchsploit to see if there's any vulnerabilities 
+
+![cms](images/cms_version.png)
+
+`searchsploit CMS Made Simple 2.2.8
+
+![Searchsploit](images/searchexploit.png)
+
+The results turn up a SQL Injection vulnerability with versions under 2.2.10 and the exploit is located in `/opt/searchsploit/exploits/php/webapps/46635.py`
+
+Checking the python file gives some useful information on the vulnerability
 
 ![CVE Details](images/cve.jpg)
 
-*What's the CVE you're using against the application?*
+## 3. What's the CVE you're using against the application?
 > ***CVE-2019-9053***
 
 *To what kind of vulnerability is the application vulnerable?*
