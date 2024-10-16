@@ -76,7 +76,23 @@ Checking the python file gives some useful information on the vulnerability
 ## 4. To what kind of vulnerability is the application vulnerable?
 > ***SQLi***
 
-Run the file -> `sudo python /usr/share/exploitdb/exploits/php/webapps/46635.py`
+Running the Python code shows you will need to provide the target URL and a wordlist to crack the password
+
+![Python prompt](images/pyprompt.png)
+
+Lots of wordlists to choose from. Choose any of the `Common-Credentials` lists
+
+![passwords list](images/pwlist.png)
+
+`python /opt/searchsploit/exploits/php/webapps/46635.py -u [IP]/simple -c -w /usr/share/wordlists/SecLists/Passwords/Common-Credentials/10-million-password-list-top-100000.txt`
+
+*Note: I got errors when first trying to run the Python code because the `print()` statements are missing the parentheses
+
+We get an encoding error. Doing some research shows the wordlist you choose has to be encoded as UTF-8. This command will convert your wordlist to the proper format.
+
+![Convert UTF-8](images/convrt_utf8.png)
+
+Now run it again 
 
 ![Run file](images/run_tech.jpg)
 
