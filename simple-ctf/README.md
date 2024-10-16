@@ -1,11 +1,12 @@
 # [Simple CTF][1]
 
-#### Scan the Machine
-> If you are unsure how to tackle this, I recommend checking out the [Nmap Tutorials by Hack Hunt][2].
+#### Let's start with a nmap scan of the target
 
 `nmap -sV -Pn <IP>`
+`-sV: Probe open ports to determine service/version info`
 
-![Nmap Scan](images/open_ports.jpg)
+
+![Nmap Scan](images/scan.png)
 
 Looks like we have three ports open: `21, 80, 2222`
 
