@@ -73,9 +73,8 @@ Checking the python file gives some useful information on the vulnerability
 ## 3. What's the CVE you're using against the application?
 > ***CVE-2019-9053***
 
-*To what kind of vulnerability is the application vulnerable?*
-
-## 4. ***SQLi***
+## 4. To what kind of vulnerability is the application vulnerable?
+> ***SQLi***
 
 Run the file -> `sudo python /usr/share/exploitdb/exploits/php/webapps/46635.py`
 
