@@ -12,15 +12,19 @@ Let's start with a nmap scan of the target
 
 ![Nmap Scan](images/scan.png)
 
-Looks like we have three ports open: `21, 80, 2222`
+Lots of interesting info to dig through. Firstly, we see there's three ports open: `21, 80, 2222`
 
-## 1. How many services are running under port 1000?*
+## 1. How many services are running under port 1000?
 > ***2***
 
-## 2. What is running on the higher port?*
+## 2. What is running on the higher port?
 > ***SSH***
 
-- Checked the website, nothing much.
+Let's do some enumeration on the target using GoBuster.
+
+We'll need a wordlist and TryHackMe provides several.
+
+(images/find_wordlists.png)
 
 - Checked `robots.txt`, found some details. I think I found a username. Will investigate later.
 
