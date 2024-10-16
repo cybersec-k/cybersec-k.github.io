@@ -60,21 +60,22 @@ At the bottom, we see the server is powered by `CMS Made Simple version 2.2.8` s
 
 ![cms](images/cms_version.png)
 
-`searchsploit CMS Made Simple 2.2.8
+`searchsploit CMS Made Simple 2.2.8`
 
-![Searchsploit](images/searchexploit.png)
+![Searchsploit](images/searchsploit.png)
 
 The results turn up a SQL Injection vulnerability with versions under 2.2.10 and the exploit is located in `/opt/searchsploit/exploits/php/webapps/46635.py`
 
 Checking the python file gives some useful information on the vulnerability
 
-![CVE Details](images/cve.jpg)
+![CVE Details](images/cve.png)
 
 ## 3. What's the CVE you're using against the application?
 > ***CVE-2019-9053***
 
 *To what kind of vulnerability is the application vulnerable?*
-> ***SQLi***
+
+## 4. ***SQLi***
 
 Run the file -> `sudo python /usr/share/exploitdb/exploits/php/webapps/46635.py`
 
