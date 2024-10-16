@@ -1,20 +1,23 @@
 # [Simple CTF][1]
 
-#### Let's start with a nmap scan of the target
+[Link: https://tryhackme.com/room/easyctf](https://tryhackme.com/room/easyctf)
 
-`nmap -sV <IP>`
+Let's start with a nmap scan of the target
+
+`nmap -sV -sC <IP>`
 
 `-sV: Probe open ports to determine service/version info`
 
+`-sC: script scan using default scripts`
 
 ![Nmap Scan](images/scan.png)
 
 Looks like we have three ports open: `21, 80, 2222`
 
-*How many services are running under port 1000?*
+## 1. How many services are running under port 1000?*
 > ***2***
 
-*What is running on the higher port?*
+## 2. What is running on the higher port?*
 > ***SSH***
 
 - Checked the website, nothing much.
