@@ -2,7 +2,8 @@
 
 #### Let's start with a nmap scan of the target
 
-`nmap -sV -Pn <IP>`
+`nmap -sV <IP>`
+
 `-sV: Probe open ports to determine service/version info`
 
 
