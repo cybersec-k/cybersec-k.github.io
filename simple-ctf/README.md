@@ -100,7 +100,7 @@ Lots of wordlists to choose from. Choose one of the `Common-Credentials` lists
 
 And bingo, password cracked for username `mitch`
 
-![Run file](images/password.jpg)
+![Run file](images/password.png)
 
 ## 5. What's the password?
 > **secret**
