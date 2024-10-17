@@ -15,10 +15,10 @@ Let's start with a nmap scan of the target
 Lots of interesting info to dig through. Firstly, we see there's three ports open: `21, 80, 2222`
 
 ## 1. How many services are running under port 1000?
-> ***2***
+> **2**
 
 ## 2. What is running on the higher port?
-> ***SSH***
+> **SSH**
 
 Let's do some enumeration on the target using GoBuster to look for hidden files and URL paths.
 
@@ -36,7 +36,7 @@ Check out the `common.txt` which should suffice for our needs
 
 `dir: uses directory/file bruteforcing mode `
 
-`-u: url`
+`-u: target url`
 
 `-w: wordlist`
 
@@ -71,28 +71,39 @@ Checking the python file gives some useful information on the vulnerability
 ![CVE Details](images/cve.png)
 
 ## 3. What's the CVE you're using against the application?
-> ***CVE-2019-9053***
+> **CVE-2019-9053**
 
 ## 4. To what kind of vulnerability is the application vulnerable?
-> ***SQLi***
+> **SQLi**
 
-Running the Python code shows you will need to provide the target URL and a wordlist to crack the password
+Here is where some troubleshooting will be required. If you get an error when first running the Python script, it is likely because it is a Python2 script and you are running Python3. Check with `python --version`
+
+Running it with `python2.7` shows we need to install the `requests` and `termcolor` modules.
+
+> python2.7 -m pip install requests termcolor
+
+![Requests error](images/reqerror.png)
+
+![Termcolor error](images/termerr.png)
+
+![Modules install](images/pipinstall.png)
+
+Finally! Now it works and we see running the Python code shows you will need to provide the target URL and a wordlist to crack the password
 
 ![Python prompt](images/pyprompt.png)
 
-Lots of wordlists to choose from. Choose any of the `Common-Credentials` lists
+Lots of wordlists to choose from. Choose one of the `Common-Credentials` lists
 
 ![passwords list](images/pwlist.png)
 
-`python /opt/searchsploit/exploits/php/webapps/46635.py -u [IP]/simple -c -w /usr/share/wordlists/SecLists/Passwords/Common-Credentials/10-million-password-list-top-100000.txt`
+`python2.7 /opt/searchsploit/exploits/php/webapps/46635.py -u <IP>/simple -c -w /usr/share/wordlists/SecLists/Passwords/Common-Credentials/10-million-password-list-top-100000.txt`
 
-*Note: I got errors when first trying to run the Python code because the `print()` statements are missing the parentheses
+And bingo, password cracked for username `mitch`
 
-We get an encoding error. Doing some research shows the wordlist you choose has to be encoded as UTF-8. This command will convert your wordlist to the proper format.
+![Run file](images/password.jpg)
 
-![Convert UTF-8](images/convrt_utf8.png)
-
-Now run it again 
+## 5. What's the password?
+> **secret**
 
 ![Run file](images/run_tech.jpg)
 
@@ -108,8 +119,6 @@ Run the file with `sudo python usr/share/exploitdb/exploits/php/webapps/46635.py
 
 > The user credential is `mitch:secret`
 
-*What's the password?*
-> **secret**
 
 As we know `ssh` is open. Let's try to connect -> `ssh mitch@<IP> -p 2222`
 
