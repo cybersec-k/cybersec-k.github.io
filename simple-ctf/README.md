@@ -1,8 +1,8 @@
 # [Simple CTF][1]
 
-[Link: https://tryhackme.com/room/easyctf](https://tryhackme.com/room/easyctf)
+[Link: https://tryhackme.com/room/easyctf][1]
 
-Let's start with a nmap scan of the target
+Let's start with a [nmap][2] scan of the target
 
 `nmap -sV -sC <IP>`
 
@@ -105,40 +105,68 @@ And bingo, password cracked for username `mitch`
 ## 5. What's the password?
 > **secret**
 
+From the initial nmap scan, we know `ssh` is open on port 2222. Let's try to connect with the found username/password -> `ssh mitch@<IP> -p 2222`
 
-As we know `ssh` is open. Let's try to connect -> `ssh mitch@<IP> -p 2222`
+![SSH](images/ssh.png)
 
-![SSH](images/ssh.jpg)
+## 6. Where can you login with the details obtained?
+> **SSH**
 
-*What's the user flag?*
+Listing the directory contents, we find a singular file and read it to find the flag
 
-![User Flag](images/user_flag.jpg)
+![User Flag](images/user_flag.png)
 
-*Is there any other user in the home directory? What's its name?*
-> ***sunbath***
+## 7. What's the user flag?
+> **G00d j0b, keep up!**
 
-![Other User](images/other_user.jpg)
+`pwd` shows we are currently in `/home/mitch`. Moving to the `/home` directory and listing the contents show another user `sunbath`
 
-*What can you leverage to spawn a privileged shell?*
-> ***vim***
+![Other User](images/sunbath.png)
 
-![Privilege Escalation](images/priv_escal.jpg)
+## 8. Is there any other user in the home directory? What's its name?
+> **sunbath**
 
-First let's make this shell stable by typing -> `python3 -c 'import pty;pty.spwan("/bin/bash")'`.
+To see the privileges of `mitch`, we run `sudo -l`
 
-![Stable Shell](images/shell_stable.jpg)
+![Sudo Help](images/sudo_help.png)
 
-I searched online for privilege escalation for `vim` and I got a link from [GTFOBins][4].
+![Privileges](images/mitch.png)
 
-Run the commands.
+We see `mitch` has the permission to run the `vim` binary as `root` without a password!
 
-![Vim Escalate](images/vim_escal.jpg)
+## 9. What can you leverage to spawn a privileged shell?
+> **vim**
 
-*What's the root flag?*
 
-![Root Flag](images/root_flag.jpg)
+Looking online for privilege escalation for `vim` and the first result led me to [GTFOBins][3] that looks exactly what we need.
+
+The first section provides some commands to spawn an interactive shell through `vim`. Since `mitch` can run `vim` as `root`, we can leverage this to spawn a root shell, giving us full control of the system
+
+![GTFO](images/GTFO.png)
+
+The `help` page shows that the `-c` flag tells `vim` to run the following command `/bin/sh` after opening. The `:!` is required as part of the syntax format in `vim` to run shell commands
+
+![Vim](images/vim_help.png)
+
+`sudo vim -c ':!/bin/sh'`
+`-c <command>: Execute <command> after loading the first file`
+
+![Escalation](images/escal.png)
+
+Now we `cd` to the `root` directory and list the contents. There's a `root` folder that only `root` has access to, a folder we would not have been able to access as `mitch`
+
+![Root Folder](images/root_folder.png)
+
+
+Inside, we find our final flag.
+
+![Root Flag](images/root_flag.png)
+
+## 10. What's the root flag?
+> **W3ll d0n3. You made it!**
+
+![Root Flag](images/root_flag.png)
 
 [1]: https://tryhackme.com/room/easyctf
-[2]: https://blog.hackhunt.in/search/label/Nmap
-[3]: https://pypi.org/project/termcolor/#files
-[4]: https://gtfobins.github.io/gtfobins/vim/
+[2]: (https://www.stationx.net/nmap-cheat-sheet/
+[3]: https://gtfobins.github.io/gtfobins/vim/
