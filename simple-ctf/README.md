@@ -105,7 +105,7 @@ And bingo, password cracked for username `mitch`
 ## 5. What's the password?
 > **secret**
 
-From the initial nmap scan, we know `ssh` is open on port 2222. Let's try to connect with the found username/password -> `ssh mitch@<IP> -p 2222`
+From the initial nmap scan, we know `ssh` is open on port 2222. Let's try to connect with the found username/password `ssh mitch@<IP> -p 2222`
 
 ![SSH](images/ssh.png)
 
