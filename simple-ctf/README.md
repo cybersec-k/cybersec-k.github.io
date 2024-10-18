@@ -149,6 +149,7 @@ The `help` page shows that the `-c` flag tells `vim` to run the following comman
 ![Vim](images/vim_help.png)
 
 `sudo vim -c ':!/bin/sh'`
+
 `-c <command>: Execute <command> after loading the first file`
 
 ![Escalation](images/escal.png)
