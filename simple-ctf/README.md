@@ -165,8 +165,7 @@ Inside, we find our final flag.
 ## 10. What's the root flag?
 > **W3ll d0n3. You made it!**
 
-![Root Flag](images/root_flag.png)
 
 [1]: https://tryhackme.com/room/easyctf
-[2]: (https://www.stationx.net/nmap-cheat-sheet/
+[2]: https://www.stationx.net/nmap-cheat-sheet/
 [3]: https://gtfobins.github.io/gtfobins/vim/
