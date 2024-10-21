@@ -6,7 +6,7 @@ Start with a nmap scan
 
 `nmap -A <IP>` 
 
-![Nmap](images/nmap.jpg)
+![Nmap](images/nmap.png)
 
 ## How many ports are open? 
 
@@ -33,11 +33,11 @@ Start with a nmap scan
 
 Now onto a GoBuster Directory scan of the webserver.
 
-![GoBuster](images/gobuster.jpg)
+![GoBuster](images/gobuster.png)
 
 Opening the paths we found in a browser, we see the upload form page on /internal/
 
-![Upload](images/internal.jpg)
+![Upload](images/internal.png)
 
 ## What is the directory that has an upload form page? 
 
@@ -48,6 +48,7 @@ Opening the paths we found in a browser, we see the upload form page on /interna
 
 Try uploading the a file with a `.txt` extension. You'll see that the extension is not allowed. We will take advantage of Burp Suite's Intruder tool and fuzz the upload form to see which extensions it will accept.
 
+![Extension not allowed](images/ext_not_allowed.png)
 
 1. In Proxy tab, turn Intercept on  request as show and send it to **Intruder**.
 2. **Clear** variables and select ***.\<file_formart>*** and click on **Add**.
