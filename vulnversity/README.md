@@ -118,9 +118,29 @@ List the files in his directory to see `user.txt` for the flag.
 ### What is the user flag?
 > **8bd7992fbe8a6ad22a63361004cfcedb**
 
-## [TASK 5] Privilege Escalation
+## Privilege Escalation
 
-On the system, search for all SUID files. What file stands out? **/bin/systemctl**
+Files with the `SUID` bit set temporarily allows the user to run the file as the file owner. Since we want to escalate our privilege, we want to search for files with `root` as file owner
+
+`find / -user root -perm -u+s -exec ls -l {} \; 2>/dev/null`
+
+`/: search from root volume`
+
+`-user root: file owner is root`
+
+`-perm -u+s: file has SUID set for user`
+
+`-exec ls -l {}: execute ls -l command on each file found and \; signifies end of exec command`
+
+`2>/dev/null: sends strerr messages to /dev/null`
+
+
+![SUID](images/suid_find.png)
+
+
+### On the system, search for all SUID files. What file stands out? 
+
+> **/bin/systemctl**
 
 > To find SUIDs on a system, run `find / -perm -u=s -type f 2>/dev/null`. To know more, [Click Here][3]
 
