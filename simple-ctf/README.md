@@ -14,10 +14,10 @@ Let's start with a [nmap][2] scan of the target
 
 Lots of interesting info to dig through. Firstly, we see there's three ports open: `21, 80, 2222`
 
-## 1. How many services are running under port 1000?
+### 1. How many services are running under port 1000?
 > **2**
 
-## 2. What is running on the higher port?
+### 2. What is running on the higher port?
 > **SSH**
 
 Let's do some enumeration on the target using GoBuster to look for hidden files and URL paths.
@@ -70,10 +70,10 @@ Checking the python file gives some useful information on the vulnerability
 
 ![CVE Details](images/cve.png)
 
-## 3. What's the CVE you're using against the application?
+### 3. What's the CVE you're using against the application?
 > **CVE-2019-9053**
 
-## 4. To what kind of vulnerability is the application vulnerable?
+### 4. To what kind of vulnerability is the application vulnerable?
 > **SQLi**
 
 Here is where some troubleshooting will be required. If you get an error when first running the Python script, it is likely because it is a Python2 script and you are running Python3. Check with `python --version`
@@ -102,28 +102,28 @@ And bingo, password cracked for username `mitch`
 
 ![Run file](images/password.png)
 
-## 5. What's the password?
+### 5. What's the password?
 > **secret**
 
 From the initial nmap scan, we know `ssh` is open on port 2222. Let's try to connect with the found username/password `ssh mitch@<IP> -p 2222`
 
 ![SSH](images/ssh.png)
 
-## 6. Where can you login with the details obtained?
+### 6. Where can you login with the details obtained?
 > **SSH**
 
 Listing the directory contents, we find a singular file and read it to find the flag
 
 ![User Flag](images/user_flag.png)
 
-## 7. What's the user flag?
+### 7. What's the user flag?
 > **G00d j0b, keep up!**
 
 `pwd` shows we are currently in `/home/mitch`. Moving to the `/home` directory and listing the contents show another user `sunbath`
 
 ![Other User](images/sunbath.png)
 
-## 8. Is there any other user in the home directory? What's its name?
+### 8. Is there any other user in the home directory? What's its name?
 > **sunbath**
 
 To see the privileges of `mitch`, we run `sudo -l`
@@ -134,7 +134,7 @@ To see the privileges of `mitch`, we run `sudo -l`
 
 We see `mitch` has the permission to run the `vim` binary as `root` without a password!
 
-## 9. What can you leverage to spawn a privileged shell?
+### 9. What can you leverage to spawn a privileged shell?
 > **vim**
 
 
@@ -163,7 +163,7 @@ Inside, we find our final flag.
 
 ![Root Flag](images/root_flag.png)
 
-## 10. What's the root flag?
+### 10. What's the root flag?
 > **W3ll d0n3. You made it!**
 
 
