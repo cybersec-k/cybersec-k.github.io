@@ -1,6 +1,6 @@
 # [Vulnversity][1]
 
-### Reconnaissance
+## Reconnaissance
 
 Start with a nmap scan 
 
@@ -8,28 +8,28 @@ Start with a nmap scan
 
 ![Nmap](images/nmap.png)
 
-## How many ports are open? 
+### How many ports are open? 
 
 > **6**
 
-## What version of the squid proxy is running on the machine? 
+### What version of the squid proxy is running on the machine? 
 
 > **3.5.12**
 
-## How many ports will nmap scan if the flag *-p-400* was used? 
+### How many ports will nmap scan if the flag *-p-400* was used? 
 
 > **400** (Ports 1-400)
 
-## What is the most likely operating system this machine is running? 
+### What is the most likely operating system this machine is running? 
 
 > **Ubuntu**
 
-## What port is the web server running on? 
+### What port is the web server running on? 
 
 > **3333**
 
 
-### Locating directories using GoBuster
+## Locating directories using GoBuster
 
 Now onto a GoBuster Directory scan of the webserver.
 
@@ -39,18 +39,18 @@ Opening the paths we found in a browser, we see the upload form page on /interna
 
 ![Upload](images/upload.png)
 
-## What is the directory that has an upload form page? 
+### What is the directory that has an upload form page? 
 
 > **/internal/**
 
 
-### Compromise the webserver
+## Compromise the webserver
 
 Try uploading the a file with a `.txt` and `.php` extension. You'll see that these extension are not allowed. We will take advantage of Burp Suite's Intruder tool and fuzz the upload form to see which extensions it will accept.
 
 ![Extension not allowed](images/ext_not_allowed.png)
 
-## What common file type you'd want to upload to exploit the server is blocked? Try a couple to find out.
+### What common file type you'd want to upload to exploit the server is blocked? Try a couple to find out.
 
 > **.php**
 
@@ -71,7 +71,7 @@ View the results and check the responses for each file extension. Only `.phtml` 
 
 ![Intruder](images/intruder_success.png)
 
-## Run this attack, what extension is allowed? 
+### Run this attack, what extension is allowed? 
 
 > **.phtml**
 
@@ -107,16 +107,16 @@ Listing the users in the home directory shows one user `bill`
 
 ![Bill](images/bill.png)
 
-## What is the name of the user who manages the webserver? 
+### What is the name of the user who manages the webserver? 
 
 > **bill**
 
 List the files in his directory to see `user.txt` for the flag.
 
-## What is the user flag?
+### What is the user flag?
 > **8bd7992fbe8a6ad22a63361004cfcedb**
 
-### [TASK 5] Privilege Escalation
+## [TASK 5] Privilege Escalation
 
 On the system, search for all SUID files. What file stands out? **/bin/systemctl**
 
