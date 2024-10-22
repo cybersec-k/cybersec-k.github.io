@@ -55,7 +55,7 @@ Try uploading the a file with a `.txt` and `.php` extension. You'll see that the
 > **.php**
 
 1. In the `Proxy` tab, open Burp's browser and turn Intercept on
-2. Navigate to the <IP>/internal page and upload a file
+2. Navigate to the '<IP>/internal' page and upload a file
 3. In Burp, you'll see the request being intercepted. Send it to `Intruder`
 4. In `Intruder`, select `Sniper` as the attack type, highlight the `.extension` of your file and add a payload marker. This is the variable that will be changed in each upload attempt going through the `phpext.txt` extensions list
 5. In the `Payloads` tab, load the `phpext.txt` and uncheck the URL Encoding at the bottom
@@ -67,7 +67,7 @@ Try uploading the a file with a `.txt` and `.php` extension. You'll see that the
 
 ![Disable encoded](images/disable_encode.png)
 
-View the results and check the responses for each file extension. Only `.phtml` has a different file length and a Success response. This is the extension we will rename our reverse shell
+View the results and check the responses for each file extension. Only `.phtml` has a different file length and a 'Success' response. This is the extension we will rename our reverse shell
 
 ![Intruder](images/intruder_success.png)
 
