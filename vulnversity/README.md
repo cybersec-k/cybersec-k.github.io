@@ -137,30 +137,52 @@ Files with the `SUID` bit set temporarily allows the user to run the file as the
 
 ![SUID](images/suid_find.png)
 
+Doing some research into the binaries found, `/bin/systemctl` stands out as it is used to start and stop different system services. That should typically be reserved for people with admin privileges and setting the `SUID` bit on it opens a misconfiguration flaw we can exploit to elevate our privileges. 
 
 ### On the system, search for all SUID files. What file stands out? 
 
 > **/bin/systemctl**
 
-> To find SUIDs on a system, run `find / -perm -u=s -type f 2>/dev/null`. To know more, [Click Here][3]
+Looking for `systemctl` exploits on [GTFOBins][2], we find one that takes advantage of `SUID` bit being set
 
-Become root and get the last flag (/root/root.txt)
-> Run this commands
-```
-TF=$(mktemp).service
+![GTFOBins](images/gtfobins.png)
+
+The first line can be omitted as we are interacting with a binary that already has `SUID` set and change the path to `/bin/systemctl`
+
+`TF=$(mktemp).service
 echo '[Service]
 Type=oneshot
-ExecStart=/bin/sh -c "cat /root/root.txt > /tmp/output"
+ExecStart=/bin/sh -c "id > /tmp/output"
 [Install]
 WantedBy=multi-user.target' > $TF
-sudo systemctl link $TF
-sudo systemctl enable --now $TF
-```
-The data from the file *root.txt* is copied to a file called *output* in *tmp* directory.
-`cat /tmp/output`. To know more, Check this [Reference][4]
+/bin/systemctl link $TF
+/bin/systemctl enable --now $TF`
+
+Paste this code into the shell.
+
+This exploit opens a shell, executes the `id` command and outputs it to `/tmp/output` so lets check the file.
+
+![id](images/id.png)
+
+We see that output of the `id` command shows we are root so we can change the `id` command to do anything!
+
+Checking the `/` directory shows a `root` folder only accessible to `root` 
+
+![Root denied](images/root_denied.png)
+
+Let's try to access this folder by changing the `id` command to `ls -la /root` and check `/tmp/output` again
+
+![Root ls](images/root_ls.png)
+
+Final step! Change the command one last time to `cat /root/root.txt` and run it for the flag. 
+
+![Flag](images/flag.png)
+
+## What is the root flag value?
+
+> **a58ff8579f0a9270368d33a9966c7fd5**
+
 
 [1]: https://tryhackme.com/room/vulnversity
-[2]: https://blog.hackhunt.in/2021/02/nmap-port-specification.html
-[3]: https://www.hackingarticles.in/linux-privilege-escalation-using-suid-binaries/
-[4]: https://gtfobins.github.io/gtfobins/systemctl/
+[2]: https://gtfobins.github.io/gtfobins/systemctl/
 
