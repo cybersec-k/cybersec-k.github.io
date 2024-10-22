@@ -61,7 +61,7 @@ Try uploading the a file with a `.txt` and `.php` extension. You'll see that the
 5. In the `Payloads` tab, load the `phpext.txt` and uncheck the URL Encoding at the bottom
 6. Click Start Attack
 
-** If URL encoding is left checked, the uploads will encode `.` as `%2e` and all fuzzing attempts will be unsuccessful
+** NOTE:If URL encoding is left checked, the uploads will encode `.` as `%2e` and all fuzzing attempts will be unsuccessful
 
 ![URL encoded](images/burp_encode.png)
 
@@ -95,7 +95,7 @@ Edit the `php-reverse-shell.php` file to your host IP address and the netcat por
 
 ![Shell IP](images/shell_edit.png)
 
-Upload the reverse shell `php-reverse-shell.phtml` to the webserver. Navigate to <IP>/internal/uploads to see your payload and click it to execute it.
+Upload the reverse shell `php-reverse-shell.phtml` to the webserver. Navigate to `<IP>/internal/uploads` to see your payload and click it to execute it.
 
 ![Payload](images/phtml_upload.png)
 
@@ -112,6 +112,8 @@ Listing the users in the home directory shows one user `bill`
 > **bill**
 
 List the files in his directory to see `user.txt` for the flag.
+
+![Flag](images/user_flag.png)
 
 ### What is the user flag?
 > **8bd7992fbe8a6ad22a63361004cfcedb**
