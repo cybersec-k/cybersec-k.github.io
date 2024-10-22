@@ -61,7 +61,7 @@ Try uploading the a file with a `.txt` and `.php` extension. You'll see that the
 5. In the `Payloads` tab, load the `phpext.txt` and uncheck the URL Encoding at the bottom
 6. Click Start Attack
 
-** NOTE:If URL encoding is left checked, the uploads will encode `.` as `%2e` and all fuzzing attempts will be unsuccessful
+**** NOTE: If URL encoding is left checked, the uploads will encode `.` as `%2e` and all fuzzing attempts will be unsuccessful**
 
 ![URL encoded](images/burp_encode.png)
 
