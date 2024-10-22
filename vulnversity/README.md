@@ -67,7 +67,7 @@ Try uploading the a file with a `.txt` and `.php` extension. You'll see that the
 
 ![Disable encoded](images/disable_encode.png)
 
-View the results and check the responses for each file extension. Only `.phtml` has a different file length and a 'Success' response. This is the extension we will rename our reverse shell
+View the results and check the responses for each file extension. Only `.phtml` has a different file length and a `Success` response. This is the extension we will rename our reverse shell
 
 ![Intruder](images/intruder_success.png)
 
