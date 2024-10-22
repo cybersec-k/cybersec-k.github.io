@@ -37,7 +37,7 @@ Now onto a GoBuster Directory scan of the webserver.
 
 Opening the paths we found in a browser, we see the upload form page on /internal/
 
-![Upload](images/internal.png)
+![Upload](images/upload.png)
 
 ## What is the directory that has an upload form page? 
 
@@ -46,26 +46,75 @@ Opening the paths we found in a browser, we see the upload form page on /interna
 
 ### Compromise the webserver
 
-Try uploading the a file with a `.txt` extension. You'll see that the extension is not allowed. We will take advantage of Burp Suite's Intruder tool and fuzz the upload form to see which extensions it will accept.
+Try uploading the a file with a `.txt` and `.php` extension. You'll see that these extension are not allowed. We will take advantage of Burp Suite's Intruder tool and fuzz the upload form to see which extensions it will accept.
 
 ![Extension not allowed](images/ext_not_allowed.png)
 
-1. In Proxy tab, turn Intercept on  request as show and send it to **Intruder**.
-2. **Clear** variables and select ***.\<file_formart>*** and click on **Add**.
-3. Under **Payloads** option, Load the *phpext.txt*. Make sure to uncheck **Payload Encoding**.
-4. Click on **Start Attack**. Check the **Length** variable, one has a different length.
+## What common file type you'd want to upload to exploit the server is blocked? Try a couple to find out.
 
-![Intruder](images/burpsuite.jpg)
+> **.php**
 
-Run this attack, what extension is allowed? **.phtml**
+1. In the `Proxy` tab, open Burp's browser and turn Intercept on
+2. Navigate to the <IP>/internal page and upload a file
+3. In Burp, you'll see the request being intercepted. Send it to `Intruder`
+4. In `Intruder`, select `Sniper` as the attack type, highlight the `.extension` of your file and add a payload marker. This is the variable that will be changed in each upload attempt going through the `phpext.txt` extensions list
+5. In the `Payloads` tab, load the `phpext.txt` and uncheck the URL Encoding at the bottom
+6. Click Start Attack
 
-Follow the remote access steps. After uploading the file.
+** If URL encoding is left checked, the uploads will encode `.` as `%2e` and all fuzzing attempts will be unsuccessful
 
-What is the name of the user who manages the webserver? **bill**
-> To get the name, check /etc/psswd file. To do that, type `cat /etc/passwd` and you will see the name bill as a user.
+![URL encoded](images/burp_encode.png)
 
-What is the user flag?
-> As we know *bill* is the user. Direct to /home/bill. Type, `cd /home/bill`. There is a file called **user.txt**. Check the content of the file using `cat user.txt`.
+![Disable encoded](images/disable_encode.png)
+
+View the results and check the responses for each file extension. Only `.phtml` has a different file length and a Success response. This is the extension we will rename our reverse shell
+
+![Intruder](images/intruder_success.png)
+
+## Run this attack, what extension is allowed? 
+
+> **.phtml**
+
+Use `netcat` to open a socket and listen for inbound connections on port 1234.
+
+`nc -lvnp 1234`
+
+`l: listen mode for inbound connections`
+
+`v: verbose`
+
+`n: disable DNS resolution`
+
+`p: port number`
+
+![Netcat](images/nc_listen.png)
+
+![Netcat options](images/nc_options.png)
+
+Edit the `php-reverse-shell.php` file to your host IP address and the netcat port and save as `.phtml` extension.
+
+![Shell IP](images/shell_edit.png)
+
+Upload the reverse shell `php-reverse-shell.phtml` to the webserver. Navigate to <IP>/internal/uploads to see your payload and click it to execute it.
+
+![Payload](images/phtml_upload.png)
+
+Back in the terminal, we see our payload has established the reverse shell
+
+![Netcat](images/nc.png)
+
+Listing the users in the home directory shows one user `bill`
+
+![Bill](images/bill.png)
+
+## What is the name of the user who manages the webserver? 
+
+> **bill**
+
+List the files in his directory to see `user.txt` for the flag.
+
+## What is the user flag?
+> **8bd7992fbe8a6ad22a63361004cfcedb**
 
 ### [TASK 5] Privilege Escalation
 
