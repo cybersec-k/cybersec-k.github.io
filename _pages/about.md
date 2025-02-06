@@ -16,4 +16,4 @@ Test
 
 ## certifications
 ---
-<img src="/assets/images/certs/sec_plus.png" alt="sec_plus" width="100">
+<img src="/assets/images/certs/sec_plus.png" alt="sec_plus" width="200">
