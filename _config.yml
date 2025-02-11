@@ -16,14 +16,14 @@ minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon
 
 # Site Settings
 locale: en-US
-title: "cybersec-k" # site title, e.g. "Jekyll • Markdown • HTML"
+title: "⌈cybersec-k⌋" # site title, e.g. "Jekyll • Markdown • HTML"
 title_separator: "|"
 subtitle: null # site tagline that appears below site title in masthead
 name: cybersec-k
-description: Cybersecurity campfire
+description: Personal blog for CTF writeups
 url: https://cybersec-k.github.io
 baseurl: null # the subpath of your site, e.g. "/blog"
-repository: null # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository: https://cybersec-k.github.io # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser: null # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo: null # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title: " "
@@ -108,7 +108,7 @@ social:
   links: null
     # An array of links to social media profiles
 
-    # Analytics
+# Analytics
 analytics:
   provider: false # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
@@ -117,7 +117,7 @@ analytics:
       # true, false (default)
 
 
-      # Site Author
+# Site Author
 author:
   name: cybersec-k
   avatar: /assets/images/main/avatar.png
@@ -316,7 +316,7 @@ defaults:
       author_profile: true
       read_time: true
       comments: null # true
-      share: true
+      share: false
       related: true
 
   # _pages
