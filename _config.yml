@@ -23,7 +23,7 @@ name: cybersec-k
 description: Personal blog for CTF writeups
 url: https://cybersec-k.github.io
 baseurl: null # the subpath of your site, e.g. "/blog"
-repository: https://cybersec-k.github.io # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository: cybersec-k/cybersec-k.github.io # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser: null # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo: null # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title: " "
@@ -121,7 +121,7 @@ analytics:
 author:
   name: cybersec-k
   avatar: /assets/images/main/avatar.png
-  bio: App Sec / Red Teamer
+  bio: I do stuff
   location: null
   email: null
   links:
