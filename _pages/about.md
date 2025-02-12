@@ -17,12 +17,12 @@ feature_row:
     excerpt: "Contains security blogs, projects, workshops, etc."
     btn_label: "Read Blogs"
     btn_class: "btn--inverse"
-    url: "/blogs/"
+    url: /blogs/
   - image_path: /assets/images/main/ctf.jpg
     alt: "CTF Writeups"
     title: "CTF Writeups"
     excerpt: "Contains writeups of CTF challenges"
-    url: "/posts/"
+    url: /posts/
     btn_label: "Read Writeups"
     btn_class: "btn--inverse"
    # 
