@@ -25,13 +25,6 @@ feature_row:
     url: /posts/
     btn_label: "Read Writeups"
     btn_class: "btn--inverse"
-   # 
-    - image_path: /assets/images/resume.png
-    title: "Resume"
-    excerpt: "Check out my resume"
-    url: "/resume/"
-    btn_label: "Read Resume"
-    btn_class: "btn--inverse"
 ---
 
 {% include feature_row id="intro" type="center" %}
