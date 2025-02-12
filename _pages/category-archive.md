@@ -4,5 +4,5 @@ layout: categories
 permalink: /categories/
 author_profile: true
 header:
-  overlay_image: /assets/images/bg.jpg
+  overlay_image: /assets/images/main/bg.jpg
 ---
