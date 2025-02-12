@@ -10,11 +10,6 @@ header:
 excerpt: "Welcome!" 
 intro:
   - excerpt: "I post writeups on CTF challenges, blogs, tutorials, and other general stuff 
----
-
-## certifications
----
-<img src="/assets/images/certs/sec_plus.png" alt="sec_plus" width="200">
 
 feature_row:
   - image_path: /assets/images/blog.png
@@ -42,3 +37,7 @@ feature_row:
 {% include feature_row id="intro" type="center" %}
 
 {% include feature_row %}
+
+## certifications
+---
+<img src="/assets/images/certs/sec_plus.png" alt="sec_plus" width="200">
