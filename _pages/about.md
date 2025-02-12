@@ -10,6 +10,7 @@ header:
 excerpt: "Welcome!" 
 intro:
   - excerpt: "I post writeups on CTF challenges, blogs, tutorials, and other general stuff 
+---
 
 ## certifications
 ---
