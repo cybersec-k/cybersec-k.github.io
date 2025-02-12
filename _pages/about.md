@@ -1,6 +1,6 @@
 ---
 title: "About me"
-permalink: /whoami/
+permalink: /about/
 layout: archive
 classes: wide
 author_profile: true
