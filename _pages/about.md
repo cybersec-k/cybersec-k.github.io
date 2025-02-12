@@ -10,7 +10,6 @@ header:
 excerpt: "Welcome!" 
 intro:
   - excerpt: "I post writeups on CTF challenges, blogs, tutorials, and other general stuff 
-
 feature_row:
   - image_path: /assets/images/blog.png
     alt: "Blogs"
