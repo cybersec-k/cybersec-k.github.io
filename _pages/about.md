@@ -9,8 +9,7 @@ header:
   #overlay_filter: 0.5
 excerpt: "Welcome!" 
 intro:
-  - excerpt: "I post writeups on CTF challenges, blogs, tutorials, and other general stuff
-  - 
+  - excerpt: "I post writeups on CTF challenges, blogs, tutorials, and other general stuff 
 
 ## certifications
 ---
