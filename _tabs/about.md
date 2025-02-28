@@ -9,4 +9,4 @@ Welcome!
 
 # certifications
 ---
-<img src="/assets/img/certs/sec_plus.png" alt="sec_plus" width="200">
+<img src="/assets/img/certs/sec_plus.png" alt="sec_plus" width="200" class="align-left">
