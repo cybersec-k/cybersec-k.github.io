@@ -10,7 +10,7 @@ tags: tryhackme
 toc: true
 ---
 
-![Tryhackme Room Link](room_card.webp){: width="600" height="150" .shadow }
+![Tryhackme Room Link](room_card.png){: width="600" height="150" .shadow }
 _<https://tryhackme.com/room/vulnversity>_
 
 
