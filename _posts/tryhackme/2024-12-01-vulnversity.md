@@ -9,7 +9,7 @@ tags: tryhackme
 toc: true
 ---
 
-<img src="/assets/img/tryhackme/vulnversity/room_pic.png" alt="vulnversity" width="500" class="align-center">
+<img src="/assets/img/tryhackme/vulnversity/room.png" alt="vulnversity" width="500" class="align-center">
 
 "https://tryhackme.com/room/vulnversity"
 
