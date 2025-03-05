@@ -23,7 +23,7 @@ A beginner level CTF
 #### Nmap
 
 Command:
-```shell
+```console
 $ nmap -T4 -n -sC -sV -Pn -p- 10.10.154.124
 ...
 PORT      STATE SERVICE       VERSION
