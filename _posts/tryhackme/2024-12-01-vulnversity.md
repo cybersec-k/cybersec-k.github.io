@@ -45,6 +45,11 @@ PORT      STATE SERVICE       VERSION
 ...
 ```
 
+```sh
+$ ls -l
+$ echo "test"
+```
+
 ```python
 import socket, base64, subprocess, sys
 HOST = "10.0.2.64"
