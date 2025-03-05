@@ -69,4 +69,15 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.connect((HOST, PORT))
     while True:
         received_data = s.recv(4096).decode("utf-8")
+
+v = 1
+s = "string"
+
+for i in range(-10, 10):
+    print(i + 1)
+
+class LinkedList(object):
+    def __init__(self, x):
+        self.val = x
+        self.next = None
 ```
