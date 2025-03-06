@@ -161,10 +161,11 @@
   font-weight: bold;
 }
 .highlight .nb {
-  color: #4df4ff
+  color: #4df4ff;
   font-weight: bold;
 }
-.highlight .ni {
+/* remove shell side border bg color */
+.highlight .ni { 
   color: #54bc4b;
   font-weight: bold;
 }
