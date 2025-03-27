@@ -10,7 +10,6 @@
 /* append your custom style below */
 @import 'custom-syntax';
   
-
 html[data-mode=dark] {
   @include custom-syntax;
 }
@@ -20,4 +19,16 @@ html[data-mode=dark] {
   html[data-mode=dark] {
     @include custom-syntax;
   }
+}
+
+/* don't change */
+.highlight,
+.highlight .w {
+  color: #d0d0d0;
+  background-color: #151515;
+}
+
+.highlight .err {
+  color: #151515;
+  background-color: #ac4142;
 }
