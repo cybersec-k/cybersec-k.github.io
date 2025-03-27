@@ -12,7 +12,7 @@
   
 @media (prefers-color-scheme: dark) {
   html:not([data-mode]) {
-    @include 'assets/css/custom-syntax';
+    @include assets/css/custom-syntax;
   }
 }
 
