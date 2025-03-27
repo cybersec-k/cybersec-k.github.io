@@ -8,11 +8,11 @@
 ';
 
 /* append your custom style below */
-@import 'custom-syntax';
+
   
 @media (prefers-color-scheme: dark) {
   html:not([data-mode]) {
-    @include custom-syntax;
+    @import 'custom-syntax';
   }
 }
 
