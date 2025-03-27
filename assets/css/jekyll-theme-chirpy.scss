@@ -11,13 +11,13 @@
 @import 'custom-syntax';
   
 
-html[mode=dark] {
+html[data-mode=dark] {
   @include custom-syntax;
 }
 
 @media (prefers-color-scheme: dark) {
-  html:not([mode]),
-  html[mode=dark] {
+  html:not([data-mode]),
+  html[data-mode=dark] {
     @include custom-syntax;
   }
 }
