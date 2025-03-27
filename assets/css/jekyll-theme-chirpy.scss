@@ -12,14 +12,14 @@
   
 html[data-mode=dark] {
   @include custom-syntax;
-    /* don't change */
+  /* don't change */
   .highlight,
   .highlight .w {
     color: #d0d0d0;
     background-color: #151515;
   }
   .highlight .err {
-    color: #151515;
+    color: #f90202;
     background-color: #ac4142;
   }
 }
@@ -28,14 +28,14 @@ html[data-mode=dark] {
   html:not([data-mode]),
   html[data-mode=dark] {
     @include custom-syntax;
-      /* don't change */
+    /* don't change */
     .highlight,
     .highlight .w {
       color: #d0d0d0;
       background-color: #151515;
     }
     .highlight .err {
-      color: #151515;
+      color: #f90202;
       background-color: #ac4142;
     }
   }
