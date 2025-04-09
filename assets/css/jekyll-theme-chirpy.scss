@@ -8,16 +8,16 @@
 ';
 
 /* append your custom style below */
-@import 'custom-syntax';
+
   
 html[data-mode=dark] {
-  @include custom-syntax;
+  @import 'custom-syntax';
 }
 
 @media (prefers-color-scheme: dark) {
   html:not([data-mode]),
   html[data-mode=dark] {
-    @include custom-syntax;
+    @import 'custom-syntax';
   }
 }
 
