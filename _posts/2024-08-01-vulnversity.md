@@ -2,7 +2,7 @@
 title: TryHackMe - Vulnversity
 categories: [TryHackMe]
 tags: []
-media_subpath: assets/images/tryhackme/vulnversity/
+media_subpath: /assets/images/tryhackme/vulnversity/
 image:
   path: room_pic.png
 ---
@@ -17,7 +17,6 @@ image:
 | Difficulty      | Medium                                                                                |
 | Tools           | nmap, Gobuster, Burpsuite, netcat                                                     |
 | Topics          | Network Enumeration, Web Enumeration, SUID/GUID
-| ----            |  
 
 ## Reconnaissance using nmap
 
