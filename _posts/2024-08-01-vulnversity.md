@@ -53,10 +53,10 @@ Web servers usually run on port `80` but here, the `Apache` web server is runnin
   *><details><summary>Click for answer</summary>6</details>*
 
 > Q. **What version of the squid proxy is running on the machine?**<br>
-  >*<details><summary>Click for answer</summary>3.5.12</details>*
+  *<details><summary>Click for answer</summary>3.5.12</details>*
 
 > Q. **How many ports will nmap scan if the flag -p-400 was used?**<br>
-  ><details>*<summary>Click for answer</summary>*400</details>
+  <details><summary>Click for answer</summary>400</details>
 
 > Q. **What is the most likely operating system this machine is running?**<br>
   ><details><summary>Click for answer</summary>Ubuntu</details>
