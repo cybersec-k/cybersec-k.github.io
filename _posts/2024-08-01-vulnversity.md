@@ -21,7 +21,7 @@ image:
 ## Task 2: Reconnaissance using nmap
 
 ```bash
-$ map -sV 10.10.206.143
+$ map -A 10.10.206.143
 Nmap scan report for ip-10-10-206-143.eu-west-1.compute.internal (10.10.206.143)
 Host is up (0.0073s latency).
 Not shown: 994 closed tcp ports (reset)
@@ -38,6 +38,10 @@ Service Info: Host: VULNUNIVERSITY; OSs: Unix, Linux; CPE: cpe:/o:linux:linux_ke
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 22.64 seconds
 ```
+
+> -A: Enables OS and version detection, executes in-build scripts for further enumeration 
+{: .prompt-info }
+
 
 `Scan the box; how many ports are open?`
 
