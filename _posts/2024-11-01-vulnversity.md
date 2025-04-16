@@ -102,20 +102,22 @@ Finished
 ===============================================================
 ```
 
-In a browser, explore the URL and the directories found with Gobuster. Navigating to `http://10.10.36.68:3333/internal`, we find an upload form, giving an opportunity to upload a malicious payload. Try uploading a `.txt` or `.php` file and it returns a `Extension not allowed` message so the form only accepts certain file extensions 
+In a browser, explore the URL and the directories found with Gobuster. Navigating to `http://10.10.36.68:3333/internal`, we find an upload form, giving an opportunity to upload a malicious payload
 
-![Extension not allowed](images/ext_not_allowed.png)
-
-> **What common file type you'd want to upload to exploit the server is blocked? Try a couple to find out.**<br>
-  >*<details><summary>Click for answer</summary>.php</details>*
+> **What is the directory that has an upload form page?**<br>
+  >*<details><summary>Click for answer</summary>/internal/</details>*
 
 
 ** Task 4: Compromise the Webserver using Burpsuite
 
-Using `Burpsuite`, we will utilize the `Proxy` and `Intruder` tools to fuzz the upload form to see which extensions it will accept and craft our payload depending on that
+Try uploading a `.txt` or `.php` file and it returns a `Extension not allowed` message so the form only accepts certain file extensions 
 
-> **What is the directory that has an upload form page?**<br>
-  >*<details><summary>Click for answer</summary>/internal/</details>*
+![Extension not allowed](ext_not_allowed.png)
+
+> **What common file type you'd want to upload to exploit the server is blocked? Try a couple to find out.**<br>
+  >*<details><summary>Click for answer</summary>.php</details>*
+
+Using `Burpsuite`, we will utilize the `Proxy` and `Intruder` tools to fuzz the upload form to see which extensions it will accept and craft our payload depending on that
 
 1. In the `Proxy` tab, open Burp's browser and turn Intercept on
 2. Navigate to `<IP address>/internal` page and upload a file
@@ -129,13 +131,13 @@ Using `Burpsuite`, we will utilize the `Proxy` and `Intruder` tools to fuzz the 
 6 . Click Start Attack
 
 
-![Intruder Setup](images/intruder_setup.png)
+![Intruder Setup](intruder_setup.png)
 
-![Payload](images/payload.png)
+![Payload](payload.png)
 
 View the results and check the responses for each file extension. Only `.phtml` has a different file length and a `Success` response. This is the extension we will use for our payload
 
-![Intruder](images/intruder_success.png)
+![Intruder](intruder_success.png)
 
 > **What extension is allowed after running the above exercise?**<br>
   >*<details><summary>Click for answer</summary>.phtml</details>*
@@ -150,9 +152,9 @@ In the reverse shell php file, edit the `$ip` variable and rename the file with 
 $ mv php-reverse-shell.php php-reverse-shell.phtml
 ```
 
-![IP](images/ip.png)
+![IP](ip.png)
 
-Start a `netcat` listener to listen for any incoming connections. After uploading and starting the reverse shell, we should see the 
+Start a `netcat` listener to listen for any incoming connections. After uploading and executing the reverse shell, we should see an established connection and a bash prompt where we can enter commands to get the flag
 
 ```bash
 # nc -lvnp 1234
@@ -169,6 +171,20 @@ $ cat /home/bill/user.txt
 8bd7992fbe8a6ad22a63361004cfcedb
 ```
 
+> **What is the name of the user who manages the webserver?**<br>
+  >*<details><summary>Click for answer</summary>Bill</details>*
+
+> **What is the user flag?**<br>
+  >*<details><summary>Click for answer</summary>8bd7992fbe8a6ad22a63361004cfcedb</details>*
+
 ## Task 5: Privilege Escalation
 
+
+
+> **On the system, search for all SUID files. Which file stands out?**<br>
+  >*<details><summary>Click for answer</summary>/bin/systemctl</details>*
+
+
+> **What is the root flag value?**<br>
+  >*<details><summary>Click for answer</summary>a58ff8579f0a9270368d33a9966c7fd5</details>*
 
