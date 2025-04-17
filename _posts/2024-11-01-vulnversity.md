@@ -55,19 +55,19 @@ Web servers usually run on port `80` but here, the Apache web server is running 
   >_<details><summary>Click for answer</summary>6</details>_
 
 > **What version of the squid proxy is running on the machine?**<br>
-  ><details>_<summary>Click for answer</summary>3.5.12_</details>
+  ><details><summary>_Click for answer</summary>_3.5.12</details>
 
 > **How many ports will nmap scan if the flag -p-400 was used?**<br>
   ><details><summary>_Click for answer_</summary>_400_</details>
 
 > **What is the most likely operating system this machine is running?**<br>
-  _><details><summary>Click for answer</summary>Ubuntu</details>_
+  ><details><summary>_Click for answer</summary>Ubuntu_</details>
 
 > **What port is the web server running on?**<br>
-  ><details><summary>*Click for answer*</summary>3333</details>
+  ><details>_<summary>Click for answer</summary>3333_</details>
 
 > **What is the flag for enabling verbose mode using Nmap?**<br>
-  ><details>*<summary>Click for answer</summary>**-v*</details>*
+  ><details>_<summary>Click for answer</summary>_-v</details>
 
 
 ## Task 3: Locating directories using Gobuster
