@@ -67,7 +67,7 @@ Web servers usually run on port `80` but here, the Apache web server is running 
   ><details><summary>*Click for answer*</summary>3333</details>
 
 > **What is the flag for enabling verbose mode using Nmap?**<br>
-  >*<details><summary>Click for answer</summary>-v</details>*
+  ><details>*<summary>Click for answer</summary>**-v*</details>*
 
 
 ## Task 3: Locating directories using Gobuster
