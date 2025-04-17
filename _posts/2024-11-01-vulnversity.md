@@ -58,13 +58,13 @@ Web servers usually run on port `80` but here, the Apache web server is running 
   ><details>*<summary>Click for answer</summary>3.5.12*</details>
 
 > **How many ports will nmap scan if the flag -p-400 was used?**<br>
-  ><details><summary>*Click for answer</summary>400*</details>*
+  ><details><summary>*Click for answer</summary>400*</details>
 
 > **What is the most likely operating system this machine is running?**<br>
-  >*<details><summary>Click for answer</summary>Ubuntu</details>*
+  ><details><summary>*Click for answer*</summary>*Ubuntu*</details>
 
 > **What port is the web server running on?**<br>
-  >*<details><summary>Click for answer</summary>3333</details>*
+  ><details><summary>*Click for answer*</summary>3333</details>
 
 > **What is the flag for enabling verbose mode using Nmap?**<br>
   >*<details><summary>Click for answer</summary>-v</details>*
