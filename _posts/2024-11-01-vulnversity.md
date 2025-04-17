@@ -52,7 +52,7 @@ We can see ports `21, 22, 139, 445, 3128 and 3333` are open and likely running `
 Web servers usually run on port `80` but here, the Apache web server is running on port `3333`. Might be interesting for further investigation
 
 > **Scan the box, how many ports are open?**<br>
-  ><details>*<summary>Click for answer</summary>6</details>*
+  ><details>*<summary>Click for answer*</summary>6</details>
 
 > **What version of the squid proxy is running on the machine?**<br>
   >*<details><summary>Click for answer</summary>3.5.12</details>*
@@ -123,13 +123,13 @@ Using `Burpsuite`, we will utilize the `Proxy` and `Intruder` tools to fuzz the 
 2. Navigate to `<IP address>/internal` page and upload a file
 3. In Burp, you'll see the request being intercepted. Click Action and send it to `Intruder`
 4. In the `Intruder` tab, select `Sniper` as the attack type, highlight the `.extension` of your file and add a payload marker §. This is the variable that will be changed in each upload attempt, trying each entry in the `phpext.txt` file
-  > Press `Clear §` to clear existing payload markers before you add your own
-  {: .prompt-tip }
 5. In the `Payloads` tab, load `phpext.txt` in the Payload Options section
-  > Uncheck the URL Encoding option at the bottom or the uploads will encode `.` as `%2e` and all fuzzing attempts will be unsuccessful
-  {: .prompt-warning }
 6. Click Start Attack
 
+> Press `Clear §` to clear existing payload markers before you add your own
+{: .prompt-tip }
+> Uncheck the URL Encoding option at the bottom or the uploads will encode `.` as `%2e` and all fuzzing attempts will be unsuccessful
+{: .prompt-warning }
 
 ![Intruder Setup](intruder_setup.png)
 
