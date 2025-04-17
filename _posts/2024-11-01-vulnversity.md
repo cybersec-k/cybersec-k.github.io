@@ -52,22 +52,22 @@ We can see ports `21, 22, 139, 445, 3128 and 3333` are open and likely running `
 Web servers usually run on port `80` but here, the Apache web server is running on port `3333`. Might be interesting for further investigation
 
 > **Scan the box, how many ports are open?**<br>
-  _><details><summary>Click for answer</summary>6</details>_
+  >_<details><summary>Click for answer</summary>6_</details>
 
 > **What version of the squid proxy is running on the machine?**<br>
-  ><details><summary>_Click for answer_</summary>3.5.12</details>
+  >_<details><summary>Click for answer_</summary>3.5.12</details>
 
 > **How many ports will nmap scan if the flag -p-400 was used?**<br>
   ><details><summary>_Click for answer_</summary>_400_</details>
 
 > **What is the most likely operating system this machine is running?**<br>
-  ><details><summary>_Click for answer</summary>Ubuntu_</details>
+  >_<details><summary>Click for answer</summary>_Ubuntu</details>
 
 > **What port is the web server running on?**<br>
-  ><details>_<summary>Click for answer</summary>3333_</details>
+  >_<details>_<summary>Click for answer</summary>_3333</details>_
 
 > **What is the flag for enabling verbose mode using Nmap?**<br>
-  ><details>_<summary>Click for answer_</summary>_-v_</details>
+  >_<details>_<summary>Click for answer_</summary>-v_</details>
 
 
 ## Task 3: Locating directories using Gobuster
