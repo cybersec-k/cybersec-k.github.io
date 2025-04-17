@@ -52,13 +52,13 @@ We can see ports `21, 22, 139, 445, 3128 and 3333` are open and likely running `
 Web servers usually run on port `80` but here, the Apache web server is running on port `3333`. Might be interesting for further investigation
 
 > **Scan the box, how many ports are open?**<br>
-  ><details>*<summary>Click for answer</summary>6*</details>
+  ><details>*<summary>Click for answer</summary>6</details>*
 
 > **What version of the squid proxy is running on the machine?**<br>
-  >*<details><summary>Click for answer</summary>3.5.12</details>*
+  ><details>*<summary>Click for answer</summary>3.5.12*</details>
 
 > **How many ports will nmap scan if the flag -p-400 was used?**<br>
-  >*<details><summary>Click for answer</summary>400</details>*
+  ><details><summary>*Click for answer</summary>400*</details>*
 
 > **What is the most likely operating system this machine is running?**<br>
   >*<details><summary>Click for answer</summary>Ubuntu</details>*
