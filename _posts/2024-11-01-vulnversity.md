@@ -84,6 +84,9 @@ Web servers usually run on port `80` but here, the Apache web server is running 
 > **test**<br>
   *><details><summary>Click for answer</summary>*test</details>
 
+> **test**<br>
+  >*<details><summary>Click for answer</summary>test*</details>
+
 ## Task 3: Locating directories using Gobuster
 
 Seeing the presence of a web server, we'll enumerate the directories using `Gobuster` by providing a wordlist
