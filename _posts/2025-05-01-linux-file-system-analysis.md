@@ -139,11 +139,11 @@ c6cbdba1c147fbb7239284b7df2aa653  /var/www/html/assets/reverse.elf
 
 We can see this signature has been flagged by multiple vendors containing shellcode with a threat label of `connectback` which aims to set up a reverse shell
 
-![VirusTotal](images/virustotal.png)
+![VirusTotal](virustotal.png)
 
 Under the Behavior tab, we can see the file attempts to establish a TCP connection to `10.10.101.34:4444`
 
-![IP](images/ip.png)
+![IP](ip.png)
 
 
 ### Timestamps
