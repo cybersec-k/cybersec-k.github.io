@@ -726,7 +726,6 @@ Searching for Mumblehard Linux ...                          * * * * * /var/tmp/f
 ```bash
 $ sudo rkhunter -c -sk | grep -B 10 -A 10 "UID 0"
 Checking the local host...
-
   Performing system boot checks
     Checking for local host name[ Found ]
     Checking for system startup files[ Found ]
