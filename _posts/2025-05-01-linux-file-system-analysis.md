@@ -14,7 +14,7 @@ image:
 
 ![room](room.png)
 
-| Name            | [Vulnversity](https://tryhackme.com/room/linuxfilesystemanalysis)                     |
+| Name            | [Linux File System Analysis](https://tryhackme.com/room/linuxfilesystemanalysis)                     |
 | ------------    | ------------------------------------------------------------------------------------- |
 | Tools:          | exiftool, debsums, strings, chkrootkit, RKHunter                                                     |
 | Topics:         | Log Investigation, User/Group Permissions, Binaries, Rootkits
