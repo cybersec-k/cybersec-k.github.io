@@ -3,7 +3,7 @@ title: TryHackMe - Linux File System Analysis
 author: 
 categories: [TryHackMe]
 tags: []
-media_subpath: /assets/images/tryhackme/linux_file_analysis/
+media_subpath: /assets/images/tryhackme/linux_file_system_analysis/
 image:
   path: room_pic.png
 ---
@@ -12,13 +12,12 @@ image:
 ## Overview
 
 
-
 ![room](room.png)
 
 | Name            | [Vulnversity](https://tryhackme.com/room/linuxfilesystemanalysis)                     |
 | ------------    | ------------------------------------------------------------------------------------- |
-| Tools:          | Exiftool                                                     |
-| Topics:         | Network Enumeration, Web Enumeration, SUID/GUID
+| Tools:          | exiftool, debsums, strings, chkrootkit, RKHunter                                                     |
+| Topics:         | Log Investigation, User/Group Permissions, Binaries, Rootkits
 
 
 ## Task 2: Investigation Setup
