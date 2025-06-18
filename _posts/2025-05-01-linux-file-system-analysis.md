@@ -723,6 +723,7 @@ Searching for Mumblehard Linux ...                          * * * * * /var/tmp/f
 ><details><summary>Click for answer</summary>/var/tmp/findme.sh</details>
 
 > **Run rkhunter on the affected system. What is the result of the (UID 0) accounts check?**
+> 
 ```bash
 $ sudo rkhunter -c -sk | grep -B 10 -A 10 "UID 0"
 Checking the local host...
