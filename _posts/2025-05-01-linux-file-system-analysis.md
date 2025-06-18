@@ -723,26 +723,27 @@ Searching for Mumblehard Linux ...                          * * * * * /var/tmp/f
 ><details><summary>Click for answer</summary>/var/tmp/findme.sh</details>
 
 > **Run rkhunter on the affected system. What is the result of the (UID 0) accounts check?**
+> 
 ```bash
 $ sudo rkhunter -c -sk | grep -B 10 -A 10 "UID 0"
-Checking the local host...
-Performing system boot checks
-Checking for local host name[ Found ]
-Checking for system startup files[ Found ]
-Checking system startup files for malware[ None found ]
-
-Performing group and account checks
-Checking for passwd file[ Found ]
-Checking for root equivalent (UID 0) accounts[ Warning ]
-Checking for passwordless accounts[ None found ]
-Checking for passwd file changes[ None found ]
-Checking for group file changes[ None found ]
-Checking root account shell history files[ OK ]
-
-Performing system configuration file checks
-Checking for an SSH configuration file[ Found ]
-Checking if SSH root access is allowed[ Warning ]
-Checking if SSH protocol v1 is allowed[ Not set ]
-Checking for other suspicious configuration settings[ None found ]
+  Checking the local host...
+    Performing system boot checks
+    Checking for local host name[ Found ]
+    Checking for system startup files[ Found ]
+    Checking system startup files for malware[ None found ]
+  
+  Performing group and account checks
+    Checking for passwd file[ Found ]
+    Checking for root equivalent (UID 0) accounts[ Warning ]
+    Checking for passwordless accounts[ None found ]
+    Checking for passwd file changes[ None found ]
+    Checking for group file changes[ None found ]
+    Checking root account shell history files[ OK ]
+  
+  Performing system configuration file checks
+    Checking for an SSH configuration file[ Found ]
+    Checking if SSH root access is allowed[ Warning ]
+    Checking if SSH protocol v1 is allowed[ Not set ]
+    Checking for other suspicious configuration settings[ None found ]
 ```
 ><details><summary>Click for answer</summary>Warning</details>
